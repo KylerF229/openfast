@@ -170,55 +170,6 @@ typedef  ^            ^                DbKi               UnstrLen      -       
 typedef  ^            ^                DbKi               mass          -        -  -   "mass of the rod"   "[kg]"
 typedef  ^            ^                DbKi               rho           -        -  -   "density"   "[kg/m3]"
 typedef  ^            ^                DbKi               d             -        -  -   "volume-equivalent diameter"   "[m]"
-<<<<<<< Updated upstream
-typedef  ^            ^                DbKi               Can           -        -  -   ""  "[-]"
-typedef  ^            ^                DbKi               Cat           -        -  -   ""  "[-]"
-typedef  ^            ^                DbKi               Cdn           -        -  -   ""  "[-]"
-typedef  ^            ^                DbKi               Cdt           -        -  -   ""  "[-]"
-typedef  ^            ^                DbKi               CdEnd         -       -  -   "drag coefficient for rod end"  "[-]"
-typedef  ^            ^                DbKi               CaEnd         -       -  -   "added mass coefficient for rod end"  "[-]"
-typedef  ^            ^                DbKi               time          -       -  -   "current time"         "[s]"
-typedef  ^            ^                DbKi               roll          -       -  -   "roll relative to vertical"         "[rad]"
-typedef  ^            ^                DbKi               pitch         -       -  -   "pitch relative to vertical"        "[rad]"
-typedef  ^            ^                DbKi               h0            -       -  -   "submerged length of rod axis, distance along rod centerline from end A to the waterplane (0 <= h0 <= L)"        "m"
-typedef  ^            ^                DbKi               r            {:}{:}   -  -   "node positions"    -
-typedef  ^            ^                DbKi               rd           {:}{:}   -  -   "node velocities"  -
-typedef  ^            ^                DbKi               q            {3}      -  -   "tangent vector for rod as a whole"  -
-typedef  ^            ^                DbKi               l            {:}      -  -   "segment unstretched length"  "[m]"
-typedef  ^            ^                DbKi               V            {:}      -  -   "segment volume"  "[m^3]"
-typedef  ^            ^                DbKi               U            {:}{:}   -  -   "water velocity at node"  "[m/s]"
-typedef  ^            ^                DbKi               Ud           {:}{:}   -  -   "water acceleration at node"  "[m/s^2]"
-typedef  ^            ^                DbKi               zeta         {:}      -  -   "water surface elevation above node"  "[m]"
-typedef  ^            ^                DbKi               PDyn         {:}      -  -   "water dynamic pressure at node"  "[Pa]"
-typedef  ^            ^                DbKi               W            {:}{:}   -  -   "weight vectors"  "[N]"
-typedef  ^            ^                DbKi               Bo           {:}{:}   -  -   "buoyancy force vectors"  "[N]"
-typedef  ^            ^                DbKi               Pd           {:}{:}   -  -   "dynamic pressure force vectors"  "[N]"
-typedef  ^            ^                DbKi               Dp           {:}{:}   -  -   "node drag (transverse)"  "[N]"
-typedef  ^            ^                DbKi               Dq           {:}{:}   -  -   "node drag (axial)"  "[N]"
-typedef  ^            ^                DbKi               Ap           {:}{:}   -  -   "node added mass forcing (transverse)"  "[N]"
-typedef  ^            ^                DbKi               Aq           {:}{:}   -  -   "node added mass forcing (axial)"  "[N]"
-typedef  ^            ^                DbKi               B            {:}{:}   -  -   "node bottom contact force"  "[N]"
-typedef  ^            ^                DbKi               Bp           {:}{:}   -  -   "transverse damping force"  "[N]"
-typedef  ^            ^                DbKi               Bq           {:}{:}   -  -   "axial damping force"  "[N]"
-typedef  ^            ^                DbKi               Fnet         {:}{:}   -  -   "total force on node"  "[N]"
-typedef  ^            ^                DbKi               M         {:}{:}{:}   -  -   "node mass matrix"  "[kg]"
-typedef  ^            ^                DbKi               FextA        {3}      -  -   "external forces from attached lines on/about end A " -
-typedef  ^            ^                DbKi               FextB        {3}      -  -   "external forces from attached lines on/about end A " -
-typedef  ^            ^                DbKi               Mext         {3}      -  -   "external moment vector holding sum of any externally applied moments i.e. bending lines" -
-typedef  ^            ^                DbKi               r6           {6}      -  -   "6 DOF position vector" -
-typedef  ^            ^                DbKi               v6           {6}      -  -   "6 DOF velocity vector" -
-typedef  ^            ^                DbKi               a6           {6}      -  -   "6 DOF acceleration vector (only used for coupled Rods)" -
-typedef  ^            ^                DbKi               F6net        {6}      -  -   "total force and moment about end A (excluding inertial loads) that Rod may exert on whatever it's attached to"
-typedef  ^            ^                DbKi               M6net        {6}{6}   -  -   "total mass matrix about end A of Rod and any attached Points"
-typedef  ^            ^                DbKi               Imat         {3}{3}   -  -   "inertia about CG in global frame"     
-typedef  ^            ^                DbKi               OrMat        {3}{3}   -  -   "DCM for body orientation"
-typedef  ^            ^                IntKi              RodUnOut      -       -  -   "unit number of rod output file"
-typedef  ^            ^                DbKi               RodWrOutput  {:}      -  -   "one row of output data for this rod"
-typedef  ^            ^                DbKi               FextU        {3}      -  -   "vector of user-defined external force on the rod end A always in the local body-fixed frame" "[N]"
-typedef  ^            ^                DbKi               Blin         {2}      -  -   "linear damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)]"
-typedef  ^            ^                DbKi               Bquad        {2}      -  -   "quadratic damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)^2]"
-
-=======
 typedef  ^            ^                DbKi               Can            -        -  -   ""  "[-]"
 typedef  ^            ^                DbKi               Cat            -        -  -   ""  "[-]"
 typedef  ^            ^                DbKi               Cdn            -        -  -   ""  "[-]"
@@ -266,7 +217,6 @@ typedef  ^            ^                DbKi               FextU        {3}      
 typedef  ^            ^                DbKi               Blin         {2}       -  -   "linear damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)]"
 typedef  ^            ^                DbKi               Bquad        {2}       -  -   "quadratic damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)^2]"
 typedef  ^            ^                DbKi               VOF          {:}       -  -
->>>>>>> Stashed changes
 
 
 # this is the Line type, which holds data for each line object

@@ -1252,11 +1252,10 @@ CONTAINS
                   IF ( scan( LineOutString, 's') > 0 )  m%RodList(l)%OutFlagList(14) = 1  ! Segment strain
                   IF ( scan( LineOutString, 'd') > 0 )  m%RodList(l)%OutFlagList(15) = 1  ! Segment strain rate
                   ! Extended flags
-                  IF ( scan( LineOutString, 'A') > 0 )  m%RodList(l)%OutFlagList(16) = 1   ! Ap
-                  IF ( scan( LineOutString, 'a') > 0 )  m%RodList(l)%OutFlagList(17) = 1   ! Aq
-                  IF ( scan( LineOutString, 'X') > 0 )  m%RodList(l)%OutFlagList(18) = 1   ! Dp
-                  IF ( scan( LineOutString, 'Y') > 0 )  m%RodList(l)%OutFlagList(19) = 1   ! Dq
-                  
+                  IF ( scan( LineOutString, 'A') > 0 )  m%RodList(l)%OutFlagList(16) = 1   ! Tangential drag forces (Ap)
+                  IF ( scan( LineOutString, 'a') > 0 )  m%RodList(l)%OutFlagList(17) = 1   ! Axial fluid inertia force (Aq)
+                  IF ( scan( LineOutString, 'X') > 0 )  m%RodList(l)%OutFlagList(18) = 1   ! Transverse drag forces (Dp)
+                  IF ( scan( LineOutString, 'Y') > 0 )  m%RodList(l)%OutFlagList(19) = 1   ! Tangential drag forces (Dq)
 
                   
 
@@ -1635,20 +1634,11 @@ CONTAINS
                   ! process output flag characters (LineOutString) and set line output flag array (OutFlagList)
                   m%LineList(l)%OutFlagList = 0  ! first set array all to zero
                   ! per node 3 component
-<<<<<<< Updated upstream
-                  IF ( scan( LineOutString, 'p') > 0 )  m%LineList(l)%OutFlagList(2) = 1 
-                  IF ( scan( LineOutString, 'v') > 0 )  m%LineList(l)%OutFlagList(3) = 1
-                  IF ( scan( LineOutString, 'U') > 0 )  m%LineList(l)%OutFlagList(4) = 1
-                  IF ( scan( LineOutString, 'D') > 0 )  m%LineList(l)%OutFlagList(5) = 1
-                  IF ( scan( LineOutString, 'b') > 0 )  m%LineList(l)%OutFlagList(6) = 1   ! seabed contact forces
-                  IF ( scan( LineOutString, 'V') > 0 )  m%LineList(l)%OutFlagList(7) = 1   ! VIV forces
-=======
                   IF ( scan( LineOutString, 'p') > 0 )  m%LineList(l)%OutFlagList(2) = 1  ! node position (p)
                   IF ( scan( LineOutString, 'v') > 0 )  m%LineList(l)%OutFlagList(3) = 1  ! node velocity (v)
                   IF ( scan( LineOutString, 'U') > 0 )  m%LineList(l)%OutFlagList(4) = 1  ! node displacement (U)
                   IF ( scan( LineOutString, 'D') > 0 )  m%LineList(l)%OutFlagList(5) = 1  ! node rotation (D)
-                  IF ( scan( LineOutString, 'b') > 0 )  m%LineList(l)%OutFlagList(6) = 1  ! seabed contact forces
->>>>>>> Stashed changes
+                  IF ( scan( LineOutString, 'b') > 0 )  m%LineList(l)%OutFlagList(6) = 1  ! seabed contact forces (B)
                   ! per node 1 component
                   IF ( scan( LineOutString, 'W') > 0 )  m%LineList(l)%OutFlagList(8) = 1  ! node weight/buoyancy (positive up)
                   IF ( scan( LineOutString, 'K') > 0 )  m%LineList(l)%OutFlagList(9) = 1  ! curvature at node

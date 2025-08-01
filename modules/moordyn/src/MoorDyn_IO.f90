@@ -61,110 +61,71 @@ MODULE MoorDyn_IO
   INTEGER, PARAMETER             :: VelX      =    7
   INTEGER, PARAMETER             :: VelY      =    8
   INTEGER, PARAMETER             :: VelZ      =    9
-  INTEGER, PARAMETER             :: RVelX     =   10
-  INTEGER, PARAMETER             :: RVelY     =   11 
-  INTEGER, PARAMETER             :: RVelZ     =   12
-  INTEGER, PARAMETER             :: AccX      =   13
-  INTEGER, PARAMETER             :: AccY      =   14
-  INTEGER, PARAMETER             :: AccZ      =   15
-  INTEGER, PARAMETER             :: RAccX     =   16
-  INTEGER, PARAMETER             :: RAccY     =   17
-  INTEGER, PARAMETER             :: RAccZ     =   18
-  INTEGER, PARAMETER             :: Ten       =   19
-  INTEGER, PARAMETER             :: FX        =   20
-  INTEGER, PARAMETER             :: FY        =   21
-  INTEGER, PARAMETER             :: FZ        =   22
-  INTEGER, PARAMETER             :: MX        =   23
-  INTEGER, PARAMETER             :: MY        =   24
-  INTEGER, PARAMETER             :: MZ        =   25
-  INTEGER, PARAMETER             :: Sub       =   26
-  INTEGER, PARAMETER             :: TenA      =   27 
-  INTEGER, PARAMETER             :: TenB      =   28
-  INTEGER, PARAMETER             :: WZ        =   29
-  INTEGER, PARAMETER             :: BoX       =   30
-  INTEGER, PARAMETER             :: BoY       =   31
-  INTEGER, PARAMETER             :: BoZ       =   32
-  INTEGER, PARAMETER             :: DpX       =   33
-  INTEGER, PARAMETER             :: DpY       =   34
-  INTEGER, PARAMETER             :: DpZ       =   35
-  INTEGER, PARAMETER             :: DqX       =   36
-  INTEGER, PARAMETER             :: DqY       =   37
-  INTEGER, PARAMETER             :: DqZ       =   38
-  INTEGER, PARAMETER             :: ApX       =   39
-  INTEGER, PARAMETER             :: ApY       =   40
-  INTEGER, PARAMETER             :: ApZ       =   41
-  INTEGER, PARAMETER             :: AqX       =   42
-  INTEGER, PARAMETER             :: AqY       =   43
-  INTEGER, PARAMETER             :: AqZ       =   44
-  INTEGER, PARAMETER             :: PdX       =   45
-  INTEGER, PARAMETER             :: PdY       =   46
-  INTEGER, PARAMETER             :: PdZ       =   47
-  INTEGER, PARAMETER             :: BX        =   48
-  INTEGER, PARAMETER             :: BY        =   49
-  INTEGER, PARAMETER             :: BZ        =   50
-  INTEGER, PARAMETER             :: Pd        =   51
-
- 
+  INTEGER, PARAMETER             :: RVelX     =    10
+  INTEGER, PARAMETER             :: RVelY     =    11
+  INTEGER, PARAMETER             :: RVelZ     =    12
+  INTEGER, PARAMETER             :: AccX      =    13
+  INTEGER, PARAMETER             :: AccY      =    14
+  INTEGER, PARAMETER             :: AccZ      =    15
+  INTEGER, PARAMETER             :: RAccX     =    16
+  INTEGER, PARAMETER             :: RAccY     =    17
+  INTEGER, PARAMETER             :: RAccZ     =    18
+  INTEGER, PARAMETER             :: Ten       =    19
+  INTEGER, PARAMETER             :: FX        =    20
+  INTEGER, PARAMETER             :: FY        =    21
+  INTEGER, PARAMETER             :: FZ        =    22
+  INTEGER, PARAMETER             :: MX        =    23
+  INTEGER, PARAMETER             :: MY        =    24
+  INTEGER, PARAMETER             :: MZ        =    25
+  INTEGER, PARAMETER             :: Sub       =    26
+  INTEGER, PARAMETER             :: TenA      =    27
+  INTEGER, PARAMETER             :: TenB      =    28
+  INTEGER, PARAMETER             :: WZ        =    29
+  INTEGER, PARAMETER             :: DpX       =    30
+  INTEGER, PARAMETER             :: DpY       =    31
+  INTEGER, PARAMETER             :: DpZ       =    32
+  INTEGER, PARAMETER             :: DqX       =    33
+  INTEGER, PARAMETER             :: DqY       =    34
+  INTEGER, PARAMETER             :: DqZ       =    35
+  INTEGER, PARAMETER             :: ApX       =    36
+  INTEGER, PARAMETER             :: ApY       =    37
+  INTEGER, PARAMETER             :: ApZ       =    38
+  INTEGER, PARAMETER             :: AqX       =    39
+  INTEGER, PARAMETER             :: AqY       =    40
+  INTEGER, PARAMETER             :: AqZ       =    41
+  INTEGER, PARAMETER             :: PdX       =    42
+  INTEGER, PARAMETER             :: PdY       =    43
+  INTEGER, PARAMETER             :: PdZ       =    44
+  INTEGER, PARAMETER             :: BX        =    45
+  INTEGER, PARAMETER             :: BY        =    46
+  INTEGER, PARAMETER             :: BZ        =    47
+  INTEGER, PARAMETER             :: BoX       =    48
+  INTEGER, PARAMETER             :: BoY       =    49
+  INTEGER, PARAMETER             :: BoZ       =    50
 
 
-  ! List of units corresponding to the quantities parameters for QTypes
- CHARACTER(ChanLen), PARAMETER :: UnitList(0:51) = (/ &
-  "(s)       ",  & !  0 - Time
-  "(m)       ",  & !  1 - PosX
-  "(m)       ",  & !  2 - PosY
-  "(m)       ",  & !  3 - PosZ
-  "(deg)     ",  & !  4 - RotX
-  "(deg)     ",  & !  5 - RotY
-  "(deg)     ",  & !  6 - RotZ
-  "(m/s)     ",  & !  7 - VelX
-  "(m/s)     ",  & !  8 - VelY
-  "(m/s)     ",  & !  9 - VelZ
-  "(deg/s)   ",  & ! 10 - RVelX
-  "(deg/s)   ",  & ! 11 - RVelY
-  "(deg/s)   ",  & ! 12 - RVelZ
-  "(m/s2)    ",  & ! 13 - AccX
-  "(m/s2)    ",  & ! 14 - AccY
-  "(m/s2)    ",  & ! 15 - AccZ
-  "(deg/s2)  ",  & ! 16 - RAccX
-  "(deg/s2)  ",  & ! 17 - RAccY
-  "(deg/s2)  ",  & ! 18 - RAccZ
-  "(N)       ",  & ! 19 - Ten
-  "(N)       ",  & ! 20 - FX
-  "(N)       ",  & ! 21 - FY
-  "(N)       ",  & ! 22 - FZ
-  "(Nm)      ",  & ! 23 - MX
-  "(Nm)      ",  & ! 24 - MY
-  "(Nm)      ",  & ! 25 - MZ
-  "(frac)    ",  & ! 26 - Sub
-  "(N)       ",  & ! 27 - TenA
-  "(N)       ",  & ! 28 - TenB
-  "(N)       ",  & ! 29 - WZ
-  "(N)       ",  & ! 30 - BoX
-  "(N)       ",  & ! 31 - BoY
-  "(N)       ",  & ! 32 - BoZ
-  "(N)       ",  & ! 33 - DpX
-  "(N)       ",  & ! 34 - DpY
-  "(N)       ",  & ! 35 - DpZ
-  "(N)       ",  & ! 36 - DqX
-  "(N)       ",  & ! 37 - DqY
-  "(N)       ",  & ! 38 - DqZ
-  "(N)       ",  & ! 39 - ApX
-  "(N)       ",  & ! 40 - ApY
-  "(N)       ",  & ! 41 - ApZ
-  "(N)       ",  & ! 42 - AqX
-  "(N)       ",  & ! 43 - AqY
-  "(N)       ",  & ! 44 - AqZ
-  "(N)       ",  & ! 45 - PdX
-  "(N)       ",  & ! 46 - PdY
-  "(N)       ",  & ! 47 - PdZ
-  "(N)       ",  & ! 48 - BX
-  "(N)       ",  & ! 49 - BY
-  "(N)       ",  & ! 50 - BZ
-  "(N)       "   /) ! 51 - Pd
-
-
-
-                               
+ CHARACTER(ChanLen), PARAMETER :: UnitList(0:50) = (/ &
+  "(s)       ",                             & !  0: Time
+  "(m)       ", "(m)       ", "(m)       ", & !  1–3:  PosX, PosY, PosZ
+  "(deg)     ", "(deg)     ", "(deg)     ", & !  4–6:  RotX, RotY, RotZ
+  "(m/s)     ", "(m/s)     ", "(m/s)     ", & !  7–9:  VelX, VelY, VelZ
+  "(deg/s)   ", "(deg/s)   ", "(deg/s)   ", & ! 10–12: RVelX, RVelY, RVelZ
+  "(m/s2)    ", "(m/s2)    ", "(m/s2)    ", & ! 13–15: AccX, AccY, AccZ
+  "(deg/s2)  ", "(deg/s2)  ", "(deg/s2)  ", & ! 16–18: RAccX, RAccY, RAccZ
+  "(N)       ",                             & ! 19: Ten
+  "(N)       ", "(N)       ", "(N)       ", & ! 20–22: FX, FY, FZ
+  "(Nm)      ", "(Nm)      ", "(Nm)      ", & ! 23–25: MX, MY, MZ
+  "(frac)    ",                             & ! 26: Sub
+  "(N)       ", "(N)       ",               & ! 27–28: TenA, TenB
+  "(N)       ",                             & ! 29: WZ
+  "(N)       ", "(N)       ", "(N)       ", & ! 30–32: DpX, DpY, DpZ 
+  "(N)       ", "(N)       ", "(N)       ", & ! 33–35: DqX, DqY, DqZ 
+  "(N)       ", "(N)       ", "(N)       ", & ! 36–38: ApX, ApY, ApZ 
+  "(N)       ", "(N)       ", "(N)       ", & ! 39–41: AqX, AqY, AqZ 
+  "(N)       ", "(N)       ", "(N)       ", & ! 42–44: PdX, PdY, PdZ 
+  "(N)       ", "(N)       ", "(N)       ", & ! 45–47: BX, BY, BZ
+  "(N)       ", "(N)       ", "(N)       "  & ! 48–50: BoX, BoY, BoZ
+/)
 
   CHARACTER(28), PARAMETER  :: OutPFmt = "( I4, 3X,A 10,1 X, A10 )"   ! Output format parameter output list.
   CHARACTER(28), PARAMETER  :: OutSFmt = "ES10.3E2"
