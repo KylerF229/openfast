@@ -216,7 +216,7 @@ typedef  ^            ^                DbKi               RodWrOutput  {:}      
 typedef  ^            ^                DbKi               FextU        {3}       -  -   "vector of user-defined external force on the rod end A always in the local body-fixed frame" "[N]"
 typedef  ^            ^                DbKi               Blin         {2}       -  -   "linear damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)]"
 typedef  ^            ^                DbKi               Bquad        {2}       -  -   "quadratic damping, transverse damping for rod element always in the local body-fixed frame" "[N/(m/s)^2]"
-typedef  ^            ^                DbKi               VOF          {:}       -  -
+typedef  ^            ^                DbKi               VOF          {:}       -  -   "Node-based volume-of-fluid for submergence"
 
 
 # this is the Line type, which holds data for each line object

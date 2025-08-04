@@ -240,7 +240,7 @@ IMPLICIT NONE
     REAL(DbKi) , DIMENSION(1:3)  :: FextU = 0.0_R8Ki      !< vector of user-defined external force on the rod end A always in the local body-fixed frame [[N]]
     REAL(DbKi) , DIMENSION(1:2)  :: Blin = 0.0_R8Ki      !< linear damping, transverse damping for rod element always in the local body-fixed frame [[N/(m/s)]]
     REAL(DbKi) , DIMENSION(1:2)  :: Bquad = 0.0_R8Ki      !< quadratic damping, transverse damping for rod element always in the local body-fixed frame [[N/(m/s)^2]]
-    REAL(DbKi) , DIMENSION(:), ALLOCATABLE  :: VOF 
+    REAL(DbKi), ALLOCATABLE :: VOF(:)   ! Node-based volume-of-fluid for submergence
   END TYPE MD_Rod
 ! =======================
 ! =========  MD_Line  =======
